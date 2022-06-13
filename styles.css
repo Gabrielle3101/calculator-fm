@@ -1,0 +1,189 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    /* font-weight: bold; */
+}
+
+:root {
+    --bg-color: hsl(222, 26%, 31%);
+    --head-color: #fff;
+    --keyboard-bckg: hsl(223, 31%, 20%);
+    --output-bg: hsl(224, 36%, 15%);
+    --output-color: #fff;
+    --num-color: hsl(221, 14%, 31%);
+    --del-bg: hsl(225, 21%, 49%);
+    --del-shadow: hsl(224, 28%, 35%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --equal-key: hsl(6, 63%, 50%);
+    --btn-bg: #fff;
+    --equal-bg: hsl(6, 70%, 34%);
+    --white: #fff;
+    --equals-color: #fff;
+    --prev-op: lightgray;
+} 
+
+.light-theme {
+    --bg-color: hsl(0, 0%, 90%);
+    --head-color: hsl(60, 10%, 19%);
+    --keyboard-bckg: hsl(0, 5%, 81%);
+    --output-bg: hsl(0, 0%, 93%);
+    --output-color: hsl(60, 10%, 19%);
+    --num-color: hsl(60, 10%, 19%);
+    --del-bg: hsl(185, 42%, 37%);
+    --del-shadow: hsl(185, 58%, 25%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --equal-key: hsl(25, 98%, 40%);
+    --btn-bg: #fff;
+    --equal-bg: hsl(35, 11%, 61%);
+    --white: #fff;
+    --equals-color: #fff;
+    --prev-op: 
+}
+
+.neon-theme {
+    --bg-color: hsl(268, 75%, 9%);
+    --head-color: hsl(52, 100%, 62%);
+    --keyboard-bckg: hsl(268, 71%, 12%);
+    --output-color: hsl(52, 100%, 62%);
+    --output-bg: hsl(268, 71%, 12%);
+    --num-color: hsl(52, 100%, 62%);
+    --del-bg: hsl(281, 89%, 26%);
+    --del-shadow: hsl(285, 91%, 52%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --equal-key: hsl(176, 100%, 44%);
+    --btn-bg: hsl(268, 47%, 21%);
+    --equal-bg: hsl(177, 92%, 70%);
+    --white: #fff;
+    --equals-color: black;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+    background-color: var(--keyboard-bckg);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 60px);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--head-color);
+}
+
+.other {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.toggle {
+    margin: 10px;
+    color: var(--head-color)
+}
+.active {
+    color: var(--equal-key);
+    cursor: pointer;
+}
+
+.not {
+    color: var(--head-color);
+}
+
+.toggle a {
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+    ;
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a { 
+    color: var(--equal-key); 
+}
+
+
+
+
+button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: var(--btn-bg);
+    color: var(--num-color);
+    box-shadow: 1px 3px var(--key-shadow);
+}
+
+.output {
+    height: 100px;
+    width: 400px;
+    background-color: var(--output-bg);
+    color: var(--output-color);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: var(--prev-op);
+    font-size: 1rem;
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+}
+
+.del-btn {
+    background-color: var(--del-bg);
+    color: var(--white);
+}
+
+.equals {
+    background-color: var(--equal-key);
+    box-shadow: 1px 3px var(--equal-bg);
+    color: var(--equals-color);
+}
+
+@media only screen and (max-width: 430px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 65px);
+        grid-template-rows: repeat(5, 60px);
+    }
+
+    .output {
+        width: 270px;
+    }
+}
+
+
+
